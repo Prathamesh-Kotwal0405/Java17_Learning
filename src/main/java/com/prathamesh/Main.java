@@ -1,17 +1,39 @@
 package com.prathamesh;
 
+import com.prathamesh.practice.*;
+
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        System.out.println("Hello and welcome to Java 17 practice!");
+//  Java 17 records and sealed interface
+        Account ca = new CheckingAccount(2000);
+        System.out.println("Balance in Checking Account is :t "+ca.getTypeOfAccount());
+        Account sa = new SavingsAccount(2100);
+        System.out.println("Balance in Savings Account is : "+sa.getTypeOfAccount());
+//  Java 17 sealed classes extend classes
+        Vehicle bike = new Bike();
+        Vehicle car = new Car();
+        bike.start();
+        bike.parent();
+        car.start();
+        car.parent();
+//  Java 17 switch call
+        JavaSeventeenSwitch jsw = new JavaSeventeenSwitch();
+        System.out.println(jsw.getDayByNumber(0));
+//  Java 17 List.of
+        List<String> skills = List.of("Java","SpringBoot","Microservices","React");
+        System.out.println(skills);
+//  Printing objects of a class and getting the getters
+        SavingsAccount saving = new SavingsAccount(12000);
+        System.out.println(saving.balance());
+        CheckingAccount checking = new CheckingAccount(134000);
+        System.out.println(checking.balance());
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
     }
 }
